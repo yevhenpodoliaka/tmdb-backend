@@ -5,7 +5,7 @@ import { validateBody, authenticate,isValidId, ctrlWrapper } from "../middleware
 import { movieSchema, updateGroupSchema } from "../models/User";
 
 const router: Router = express.Router();
-
+router.get("/",authenticate,ctrlWrapper(ctrl.getAll));
 router.post("/add",authenticate, validateBody(movieSchema), ctrlWrapper(ctrl.add));
 router.delete(
   "/remove/:_id",
