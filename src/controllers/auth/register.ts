@@ -27,7 +27,8 @@ const register = async (req: Request, res: Response): Promise<void> | never => {
   const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "24h" });
   await User.findByIdAndUpdate(newUser._id, { token });
   res.status(201).json({
-    name: newUser.email,
+    name: newUser.name,
+    email:newUser.email,
     token,
   });
 };
