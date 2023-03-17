@@ -5,6 +5,7 @@ import logger from "morgan";
 import mongoose from "mongoose";
 import { IRequestError } from "./interfaces";
 import authRouter from "./routes/auth";
+import moviesRouter from "./routes/movies"
 dotenv.config();
 
 const app: Express = express();
@@ -15,6 +16,7 @@ app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use("/api/auth", authRouter);
+app.use("/api/movies", moviesRouter);
 
 app.use((req: Request, res: Response) => {
   res.status(404).json({ message: "Not found" });

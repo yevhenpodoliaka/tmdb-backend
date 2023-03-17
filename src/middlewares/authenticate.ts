@@ -21,7 +21,7 @@ export interface IRequest extends Request {
 const authenticate = async(req: IRequest, res: Response, next: NextFunction): Promise<void> => {
     const {authorization = ""} = req.headers;
     const [bearer, token] = authorization.split(" ");
-    console.log(bearer, token);
+
     if(bearer !== "Bearer") {
         const error = RequestError(401, "Token invalid");
         next(error);
@@ -31,6 +31,7 @@ const authenticate = async(req: IRequest, res: Response, next: NextFunction): Pr
         const {id} = jwt.verify(token, SECRET_KEY) as IPayload;
 
         const user: IUser | null = await User.findById(id);
+
         if(!user) {
             next(RequestError(401, "User not found"));
         }
