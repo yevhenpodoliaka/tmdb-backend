@@ -65,6 +65,9 @@ export const movieSchema = Joi.object({
   movieId: Joi.string().required(),
   group: Joi.string().valid("watched", "favorites", "queued"),
 });
+export const updateGroupSchema = Joi.object({
+  group: Joi.string().valid("watched", "favorites", "queued"),
+});
 
 
 
