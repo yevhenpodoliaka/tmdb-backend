@@ -6,15 +6,15 @@ import { movieSchema, updateGroupSchema } from "../models/User";
 
 const router: Router = express.Router();
 router.get("/",authenticate,ctrlWrapper(ctrl.getAll));
-router.post("/add",authenticate, validateBody(movieSchema), ctrlWrapper(ctrl.add));
+router.post("/",authenticate, validateBody(movieSchema), ctrlWrapper(ctrl.add));
 router.delete(
-  "/remove/:_id",
+  "/:_id",
   authenticate,
   isValidId,
   ctrlWrapper(ctrl.remove)
 );
 router.patch(
-  "/update/:_id",
+  "/:_id",
   authenticate,
   isValidId,
   validateBody(updateGroupSchema),
