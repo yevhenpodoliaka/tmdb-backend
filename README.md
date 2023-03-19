@@ -1,6 +1,6 @@
 # tmdb-backend
 -----------------------------------------------------------------
-BASE_URL:`https://tmdb-backend.onrender.com`
+BASE_URL:`tmdb-backend-production.up.railway.app`
 -----------------------------
 ## AUTH  :lock:
 ----------------------------------------------------------------------
