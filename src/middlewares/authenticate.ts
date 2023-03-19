@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import jwt, {JwtPayload} from "jsonwebtoken";
+import jwt, {JwtPayload,JsonWebTokenError} from "jsonwebtoken";
 import dotenv from "dotenv";
-
+import mongoose from "mongoose";
 import{ User, IUser} from "../models/User";
 
 import { RequestError } from "../helpers";
@@ -11,7 +11,7 @@ dotenv.config();
 const {SECRET_KEY = ""} = process.env;
 
 export interface IPayload extends JwtPayload {
-    id?: any
+  id: mongoose.Types.ObjectId | JsonWebTokenError;
 }
 
 export interface IRequest extends Request {
