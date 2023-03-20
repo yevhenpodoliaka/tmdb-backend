@@ -28,7 +28,7 @@ const login = async (req: Request, res: Response): Promise<void> | never => {
     res.json({
         name:user.name,
         email: user.email,
-        token:user.token,
+        token:token,
     })
 }
 
