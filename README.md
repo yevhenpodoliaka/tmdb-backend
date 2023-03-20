@@ -24,7 +24,6 @@ BASE_URL:`tmdb-backend-production.up.railway.app`
         name: string,
         email: string,
         token: string,
-        movies: [],
  
     }
   ```
@@ -48,8 +47,6 @@ BASE_URL:`tmdb-backend-production.up.railway.app`
       name: string,
       email: string,
     token: string,
-    movies: movie[],
- 
   }
    
 ```
@@ -73,8 +70,6 @@ BASE_URL:`tmdb-backend-production.up.railway.app`
     user: {
         name,
         email,
-        movies:[],
- 
   }
 ```
 ----------------------------
