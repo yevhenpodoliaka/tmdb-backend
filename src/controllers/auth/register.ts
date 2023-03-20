@@ -30,7 +30,6 @@ const register = async (req: Request, res: Response): Promise<void> | never => {
     name: newUser.name,
     email:newUser.email,
     token,
-    movies:newUser.movies
   });
 };
 
